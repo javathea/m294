@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const names = ["ANNE", "TOBIAS", "FRANK"];
+
+        function toCaesar(input) {
+            const characters = input.split("");
+            const newCharacters = characters.map((character) => {
+                return String.fromCharCode((character.charCodeAt(0) -65 + 13) % 26 + 65);
+            });
+            return newCharacters.join("");
+        }
+        const newNames = [];
+
+        for (let i = 0; i < names.length; i++) {
+            newNames.push(toCaesar(names[i]));
+        }
+
+        console.log(newNames);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
